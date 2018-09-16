@@ -10,6 +10,7 @@
   "license": "MIT",
   "devDependencies": {
     "grunt": "^1.0.3",
+    "grunt-bower-concat": "^1.0.0",
     "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-connect": "^2.0.0",
     "grunt-contrib-sass": "^1.0.0",

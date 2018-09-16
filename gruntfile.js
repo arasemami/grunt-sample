@@ -11,7 +11,14 @@ module.exports =  function(grunt) {
                 dest:'builds/development/js/scripts.js'
             } 
         },
-
+        bower_concat:{
+            all:{
+                dest: {
+                    'js': 'builds/development/js/_bower.js',
+                    'css': 'builds/development/css/_bower.css'
+                  },
+            }
+        },
         sass:{
             options:{
                 outputStyle: 'compressed'
@@ -19,7 +26,7 @@ module.exports =  function(grunt) {
             dist:{
                     files:[{
                         src : 'components/sass/style.scss',
-                        dest:'builds/development/sass/style.css'
+                        dest:'builds/development/css/style.css'
                     }] 
                 }
             
@@ -62,7 +69,9 @@ module.exports =  function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-wiredep');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-bower-concat');
 
 
-    grunt.registerTask('default',[ 'wiredep', 'concat', 'sass','connect', 'watch']);
+
+    grunt.registerTask('default',[ 'wiredep', 'concat', 'sass','bower_concat', 'connect', 'watch']);
 };
