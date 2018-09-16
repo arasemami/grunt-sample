@@ -1,0 +1,17 @@
+{
+  "name": "grunttemp",
+  "description": "simple project about grunt",
+  "main": "index.js",
+  "authors": [
+    "aras emami"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
