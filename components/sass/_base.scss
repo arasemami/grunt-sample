@@ -2,17 +2,29 @@
 
 $font-stack:    Helvetica, sans-serif;
 $primary-color: #333;
+$red-color: red;
 
 body {
   font: 100% $font-stack;
   color: $primary-color;
 }
 h1 {
-  font: 100% $font-stack;
+  font: 200% $font-stack;
   color: $primary-color;
 }
 h2 {
   font: 100% $font-stack;
   color: $primary-color;
-  
+
+}
+
+.container{
+margin: auto;
+text-align: center;
+color: $red-color;
+padding: 1rem;
+font-weight: 700;
+
+
+
 }

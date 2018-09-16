@@ -24,9 +24,25 @@ module.exports =  function(grunt) {
                 }
             
         },
+        connect:{
+            server:{
+                options:{
+                    hostname:'localhost',
+                    port: 8000,
+                    base:'builds/development/',
+                    livereload: true
+                }
+            }
+        },
+        wiredep:{
+            target:{
+                src:'builds/development/**/*.html'
+            }
+        },
         watch:{
             options:{
-                spawn: false
+                spawn: false,
+                livereload: true,
             },
             scripts:{
                 files:[
@@ -43,8 +59,10 @@ module.exports =  function(grunt) {
 
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-sass');
+    grunt.loadNpmTasks('grunt-contrib-connect');
+    grunt.loadNpmTasks('grunt-wiredep');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
 
-    grunt.registerTask('default',['concat', 'sass', 'watch']);
+    grunt.registerTask('default',[ 'wiredep', 'concat', 'sass','connect', 'watch']);
 };
